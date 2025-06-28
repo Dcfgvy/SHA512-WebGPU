@@ -252,7 +252,8 @@ async function main() {
     console.log("====================================");
 
     const largeInput = sha512.generateRandomString(10000);
-    console.log(`Testing with ${largeInput.length} character string...`);
+    console.log(`Testing with ${largeInput.length} character string:`);
+    console.log(largeInput);
 
     const startTime = performance.now();
     const largeResult = await sha512.computeHash(largeInput);
