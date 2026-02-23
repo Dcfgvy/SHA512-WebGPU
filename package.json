@@ -1,0 +1,38 @@
+{
+  "name": "sha512-webgpu",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Implementation of SHA-512 algorithm using WGSL compute shader",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "sass": "^1.64.1",
+    "stats-js": "^1.0.1",
+    "typescript": "^5.0.2",
+    "vite": "^6.3.5",
+    "@webgpu/types": "^0.1.34"
+  },
+  "dependencies": {
+    "js-sha512": "^0.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dcfgvy/SHA512-WebGPU.git"
+  },
+  "keywords": [
+    "sha512",
+    "wgsl",
+    "webgpu"
+  ],
+  "author": "Ivan Kusliy <ipkusliywork@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dcfgvy/SHA512-WebGPU/issues"
+  },
+  "homepage": "https://github.com/Dcfgvy/SHA512-WebGPU#readme"
+}
