@@ -2,7 +2,7 @@
 // Copyright (c) 2026 Ivan Kusliy <ipkusliywork@gmail.com>
 // Licensed under the MIT License
 
-// Supports input up to 536 MB in size (2^32 - 1 - 128 - 1023 bits) in big-endian byte order
+// Supports input up to 511 MB in size (2^32 - 1 - 128 - 1023 bits) in big-endian byte order
 
 @group(0) @binding(0) var<storage, read> input: array<u32>;
 @group(0) @binding(1) var<storage, read> input_size: array<u32, 1>;  // IN BITS !!!
