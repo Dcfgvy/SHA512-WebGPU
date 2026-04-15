@@ -126,10 +126,9 @@ fn get_message_block(size_bits: u32, k: u32, n: u32, input_array_length: u32) ->
   let block_start_bit = k * 1024u;
   let is_final_block = (k == n - 1u);
 
-  for(var i = 0u; i < 16u; i++){
-    var high: u32;
-    var low: u32;
-    
+  var high: u32;
+  var low: u32;
+  for(var i = 0u; i < 16u; i++){    
     if (is_final_block && i >= 14u) {
       // Length field in final block
       high = 0u;  // high 64 bits of length (always 0)
@@ -174,9 +173,10 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
   var h_previous: u64_pair = h;
 
   // FIPS PUB 180-4 Section 6.4.2
+  var message_schedule: array<u64_pair, SHA512_MESSAGE_SCHEDULE_SIZE>
   for(var i: u32 = 0u; i < n; i++){
     // message_schedule will only contain the first 16 messages - the 1024-bit block M(i)
-    var message_schedule: array<u64_pair, SHA512_MESSAGE_SCHEDULE_SIZE> = get_message_block(input_size_bits, i, n, input_array_length);
+    message_schedule = get_message_block(input_size_bits, i, n, input_array_length);
 
     // Calculate the rest 64 messages
     for(var t: u32 = 16u; t < SHA512_MESSAGE_SCHEDULE_SIZE; t++){
